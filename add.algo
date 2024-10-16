@@ -1,0 +1,31 @@
+// Declare variables  
+sentence := "This is a sample sentence." // Example sentence  
+length_counter := 0  
+word_counter := 0  
+vowel_counter := 0  
+
+// Define vowels  
+vowels := "aeiouAEIOU"  
+
+// Process each character in the sentence  
+FOR each character IN sentence DO  
+    length_counter := length_counter + 1 // Count each character  
+
+    // Check if the character is a vowel  
+    IF character IN vowels THEN  
+        vowel_counter := vowel_counter + 1 // Increment vowel counter  
+    END_IF  
+
+    // Count words (a word is counted when a space is found)  
+    IF character == " " THEN  
+        word_counter := word_counter + 1 // Count the space as a word separator  
+    END_IF  
+END_FOR  
+
+// After the loop, increment word counter for the last word since it won't be followed by a space  
+word_counter := word_counter + 1  
+
+// Output the results  
+Write("Length of sentence: ", length_counter)  
+Write("Number of words: ", word_counter)  
+Write("Number of vowels: ", vowel_counter)
